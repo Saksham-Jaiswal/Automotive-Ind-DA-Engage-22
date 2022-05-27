@@ -8,6 +8,7 @@ from pandas_profiling import ProfileReport
 from flask_caching import Cache
 from werkzeug.utils import secure_filename
 import os
+from newsapi import NewsApiClient
 
 config = {
     "DEBUG": True,          # some Flask specific configs
@@ -84,14 +85,30 @@ def query():
 @app.route("/<prm1>/<prm2>/<prm3>")  #here we operate upon those variables and reder the result on the webpage
 def res(prm1,prm2,prm3):
     return render_template("automotiveDatasetJP.html")
-    # if(prm3=="min"):
-    #     m=df_new[prm2].min()
-    # if(prm3=="max"):
-    #     m=df_new[prm2].max()
-    # if(prm3=="mean"):
-    #     m=df_new[prm2].mean()
-    
 
+    
+@app.route('/trending')
+def trending():
+    newsapi = NewsApiClient(api_key="cf58ec497365431eab660fea88c66aa6")
+    all_articles = newsapi.get_everything(q='+automotive',language='en',sort_by='popularity',page=1)
+    articles = all_articles['articles']
+
+    desc = []
+    news = []
+    img = []
+    lnk=[]
+
+    for i in range(len(articles)):
+        myarticles = articles[i]
+
+        news.append(myarticles['title'])
+        desc.append(myarticles['description'])
+        img.append(myarticles['urlToImage'])
+        lnk.append(myarticles['url'])
+
+    mylist = zip(news, desc, img,lnk)
+
+    return render_template('trending.html', context=mylist)
 
   
 

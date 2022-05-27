@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+Trending
+
+{% endblock title %}
+
+
+{% block body %}
+
+<div style="text-align:center">
+    <br>
+
+    <h2> Get trending updates about Automotive Industry here! </h2>
+
+    <div class="container">
+
+        {% for new, des, i,lnk in context %}
+
+        <div class="container my-5">
+                <p>
+                    <a href="{{lnk}}">
+                        <img style='height: 100%; width: 100%; object-fit: contain' src="{{i}}" alt="">
+                    </a>
+                </p>
+
+            <div class="container my-3">
+                <h3>News: {{new}} </h3>
+                <h5>Description: {{des}} </h5>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+
+{% endblock body %}
