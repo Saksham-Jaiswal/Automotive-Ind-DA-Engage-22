@@ -78,7 +78,7 @@ def query():
 
 @app.route("/<prm1>/<prm2>/<prm3>")  #here we operate upon those variables and reder the result on the webpage
 def res(prm1,prm2,prm3):
-    return render_template("02_EDA_of_Automobile_Dataset.html")
+    return render_template("automotiveDatasetJP.html")
     # if(prm3=="min"):
     #     m=df_new[prm2].min()
     # if(prm3=="max"):
