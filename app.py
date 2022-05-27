@@ -34,8 +34,13 @@ df.drop(columns=l1,inplace=True)
 def hello_world():
     return render_template('index.html')
 
+#render the data analysis report of the given sample dataset
+@app.route("/Data Analysis Report")
+def report():
+    return render_template('Data Analysis Report.html')
+
 #get the dataset from the user
-@app.route('/get_dataset', methods=['GET', 'POST'])
+@app.route('/Analyse My Dataset', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         # check if the post request has the file part
@@ -53,7 +58,7 @@ def upload_file():
             os.mkdir('static')
         file.save(os.path.join('static', filename))
         return redirect(url_for('analyse', name=filename))
-    return render_template('get_dataset.html')
+    return render_template('Analyse My Dataset.html')
 
 #analyse the dataset uploaded by the user
 @app.route("/<name>")  
