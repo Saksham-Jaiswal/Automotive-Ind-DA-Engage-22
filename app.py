@@ -31,9 +31,21 @@ df.drop(columns=l1,inplace=True)
 
 
 #creating a route decorator, it is basically the pages you want to create for your website for each new page you will have to create a route i.e. a decorator
-@app.route("/")
-def hello_world():
+@app.route("/",methods=["POST","GET"])
+def query():
+    if request.method=="POST":
+        p1=request.form["nm1"]
+        return redirect(url_for("res1",prm1=p1))
     return render_template('index.html')
+
+
+# @app.route("/<prm1>")  #here we operate upon those variables and reder the result on the webpage
+# def res1(prm1):
+#     if prm1=="cylinders":
+#         return render_template("automotiveDatasetJP.html")
+#     if prm1=="doors":
+#         return render_template()
+#     if prm1==""
 
 #render the data analysis report of the given sample dataset
 @app.route("/Data Analysis Report")
@@ -73,20 +85,7 @@ def analyse(name):
     profile.to_file(output_file=op_file)
     return render_template(name+".html")
 
-@app.route("/query",methods=["POST","GET"])  #this method here gets the values of multiple parameters from the client i.e. the webpage
-def query():
-    if(request.method=="POST"):
-        p1=request.form["nm1"]  #here nm1 is the key and the value will be the input given by the user to the form
-        p2=request.form["nm2"]
-        p3=request.form["nm3"]
-        return redirect(url_for("res",prm1=p1,prm2=p2,prm3=p3))
-    return render_template("query.html")
-
-@app.route("/<prm1>/<prm2>/<prm3>")  #here we operate upon those variables and reder the result on the webpage
-def res(prm1,prm2,prm3):
-    return render_template("automotiveDatasetJP.html")
-
-    
+#trending page
 @app.route('/trending')
 def trending():
     newsapi = NewsApiClient(api_key="cf58ec497365431eab660fea88c66aa6")
@@ -110,7 +109,19 @@ def trending():
 
     return render_template('trending.html', context=mylist)
 
-  
+# @app.route("/query",methods=["POST","GET"])  #this method here gets the values of multiple parameters from the client i.e. the webpage
+# def query():
+#     if(request.method=="POST"):
+#         p1=request.form["nm1"]  #here nm1 is the key and the value will be the input given by the user to the form
+#         p2=request.form["nm2"]
+#         p3=request.form["nm3"]
+#         return redirect(url_for("res",prm1=p1,prm2=p2,prm3=p3))
+#     return render_template("query.html")
+
+# @app.route("/<prm1>/<prm2>/<prm3>")  #here we operate upon those variables and reder the result on the webpage
+# def res(prm1,prm2,prm3):
+#     return render_template("automotiveDatasetJP.html")
+
 
 
 #following two lines are to command flask to run the application
