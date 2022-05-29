@@ -1,2 +1,2 @@
-This folder will contain all the templates of your website
-Basically all the front end of the website i.e. your html, css , js etc.. 
+This folder contains all the templates of the application.
+Basically all the routes of the web application 
