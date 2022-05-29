@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Query Result
+{% endblock title %}
+
+{% block style %}
+<style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+{% endblock style %}
+
+
+{% block body %}
+
+{% if q=="bodysize_vs_price" %}
+<br>
+<img src="static/graphs/bodysize_vs_price.png" alt="" style="width:30%;">
+{% elif q=="cylinder_vs_horsepower" %}
+<br>
+<img src="static/graphs/cylinder_vs_horsepower.png" alt="" style="width:30%;">
+{% elif q=="enginesize_vs_dist" %}
+<br>
+<img src="static/graphs/enginesize_vs_dist.png" alt="" style="width:30%;">
+{% elif q=="enginesize_vs_price_vs_horsepower" %}
+<br>
+<img src="static/graphs/enginesize_vs_price_vs_horsepower.png" alt="" style="width:30%;">
+{% elif q=="enginesize_vs_price" %}
+<br>
+<img src="static/graphs/enginesize_vs_price.png" alt="" style="width:30%;">
+{% elif q=="enginesize_vs_range" %}
+<br>
+<img src="static/graphs/enginesize_vs_range.png" alt="" style="width:30%;">
+{% elif q=="enginespecs_corr" %}
+<br>
+<img src="static/graphs/enginespecs_corr.png" alt="" style="width:30%;">
+{% elif q=="enginespecs_vs_pricebracket" %}
+<br>
+<img src="static/graphs/enginespecs_vs_pricebracket.png" alt="" style="width:30%;">
+{% elif q=="enginetype_vs_price" %}
+<br>
+<img src="sstatic/graphs/enginetype_vs_price.png" alt="" style="width:30%;">
+{% elif q=="fuelsystem_vs_price" %}
+<br>
+<img src="static/graphs/fuelsystem_vs_price.png" alt="" style="width:30%;">
+{% elif q=="height_vs_bodystyle" %}
+<br>
+<img src="static/graphs/height_vs_bodystyle.png" alt="" style="width:30%;">
+{% elif q=="highwaympg_vs_citympg" %}
+<br>
+<img src="static/graphs/highwaympg_vs_citympg.png" alt="" style="width:30%;">
+{% elif q=="horsepower_vs_dist" %}
+<br>
+<img src="static/graphs/horsepower_vs_dist.png" alt="" style="width:30%;">
+{% elif q=="horsepower_vs_price" %}
+<br>
+<img src="static/graphs/horsepower_vs_price.png" alt="" style="width:30%;">
+{% elif q=="horsepower_vs_price2" %}
+<br>
+<img src="static/graphs/horsepower_vs_price2.png" alt="" style="width:30%;">
+{% elif q=="horsepower_vs_range" %}
+<br>
+<img src="static/graphs/horsepower_vs_range.png" alt="" style="width:30%;">
+{% elif q=="mileage_vs_price" %}
+<br>
+<img src="static/graphs/mileage_vs_price.png" alt="" style="width:30%;">
+{% elif q=="numdoors_vs_bodystyle" %}
+<br>
+<img src="static/graphs/numdoors_vs_bodystyle.png" alt="" style="width:30%;">
+{% elif q=="numdoors_vs_count" %}
+<br>
+<img src="static/graphs/numdoors_vs_count.png" alt="" style="width:30%;">
+{% elif q=="pairplot_vs_bodysize" %}
+<br>
+<img src="static/graphs/pairplot_vs_bodysize.pngg" alt="" style="width:30%;">
+{% elif q=="pairplot_vs_enginespecs" %}
+<br>
+<img src="static/graphs/pairplot_vs_enginespecs.png" alt="" style="width:30%;">
+{% elif q=="peakrpm_vs_cylinders" %}
+<br>
+<img src="static/graphs/peakrpm_vs_cylinders.png" alt="" style="width:30%;">
+{% elif q=="price_vs_bodystyle" %}
+<br>
+<img src="static/graphs/price_vs_bodystyle.png" alt="" style="width:30%;">
+{% elif q=="scale" %}
+<br>
+<img src="static/graphs/scale.png" alt="" style="width:30%;">
+{% elif q=="riskysafe_medianmode" %}
+<br>
+<img src="static/graphs/riskysafe_medianmode.png" alt="" style="width:30%;">
+{% elif q=="riskysafecounts_vs_bodystyle" %}
+<br>
+<img src="static/graphs/riskysafecounts_vs_bodystyle.png" alt="" style="width:30%;">
+{% elif q=="symboling_vs_dist" %}
+<br>
+<img src="static/graphs/symboling_vs_dist.png" alt="" style="width:30%;">
+{% elif q=="Volume_vs_symboling_swarm" %}
+<br>
+<img src="static/graphs/Volume_vs_symboling_swarm.png" alt="" style="width:30%;">
+{% elif q=="wbase_vs_bodystyle_swarm" %}
+<br>
+<img src="static/graphs/wbase_vs_bodystyle_swarm.png" alt="" style="width:30%;">
+{% elif q=="wbase_vs_bodystyle" %}
+<br>
+<img src="static/graphs/wbase_vs_bodystyle.png" alt="" style="width:30%;">
+
+{% elif q=="wbase_vs_symbol_vs_height" %}
+<br>
+<img src="static/graphs/wbase_vs_symbol_vs_height.png" alt="" style="width:30%;">
+
+{% elif q=="wheelbase_vs_height" %}
+<br>
+<img src="static/graphs/wheelbase_vs_height.png" alt="" style="width:30%;">
+{% elif q=="wheelbase_vs_height2" %}
+<br>
+<img src="static/graphs/wheelbase_vs_height2.png" alt="" style="width:30%;">
+{% elif q=="wheelbase_vs_volume_vs_doors" %}
+<br>
+<img src="static/graphs/wheelbase_vs_volume_vs_doors.png" alt="" style="width:30%;">
+
+{% else %}
+<br>
+{{ "Sorry we can't process this query in the database"}}
+
+{% endif %}
+
+{% endblock body %}
