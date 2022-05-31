@@ -1,9 +1,9 @@
 attrs==21.4.0
 certifi==2022.5.18.1
 charset-normalizer==2.0.12
-click @ file:///opt/concourse/worker/volumes/live/2d66025a-4d79-47c4-43be-6220928b6c82/volume/click_1646056610594/work
+click
 cycler==0.11.0
-Flask @ file:///opt/conda/conda-bld/flask_1648041541647/work
+Flask
 Flask-Caching==1.10.1
 Flask-SQLAlchemy==2.5.1
 fonttools==4.33.3
@@ -12,8 +12,8 @@ gunicorn==20.1.0
 htmlmin==0.1.12
 idna==3.3
 ImageHash==4.2.1
-itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
-Jinja2 @ file:///opt/conda/conda-bld/jinja2_1647436528585/work
+itsdangerous 
+Jinja2
 joblib==1.1.0
 kiwisolver==1.4.2
 MarkupSafe==2.1.1
@@ -45,4 +45,4 @@ tqdm==4.64.0
 typing_extensions==4.2.0
 urllib3==1.26.9
 visions==0.7.4
-Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
+Werkzeug
